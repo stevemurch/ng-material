@@ -8,7 +8,7 @@
     "build": "ng build --prod",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
+    "e2e": "ng e2e", 
     "code": "ng serve --ssl --ssl-key 'server.key' --ssl-cert 'rootCA.pem'"
   },
   "private": true,
