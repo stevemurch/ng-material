@@ -3,17 +3,18 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpModule } from '@angular/http'
 import { MaterialModule } from './material.module';
-
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './signin/signin.component';
-
 import {
   SocialLoginModule,
   AuthServiceConfig,
   GoogleLoginProvider,
   FacebookLoginProvider,
 } from "angular5-social-login";
+
+import { OccasionService } from './services/occasion.service';
+import { HttpClientModule } from '@angular/common/http';
 
 // Configs 
 export function getAuthServiceConfigs() {
@@ -42,13 +43,16 @@ export function getAuthServiceConfigs() {
     BrowserModule,
     FormsModule,
     HttpModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
     SocialLoginModule
   ],
   providers: [
-    { provide: AuthServiceConfig,
-    useFactory: getAuthServiceConfigs
+    OccasionService,
+    { 
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
   }
   ],
   bootstrap: [AppComponent]

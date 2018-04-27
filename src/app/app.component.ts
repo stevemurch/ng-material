@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { OccasionService } from './services/occasion.service';
 
 @Component({
   selector: 'app-root',
@@ -7,19 +8,26 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'app';
+  public occasions;
 
-  answer: string = '';
-  answerDisplay: string = '';
-  showSpinner: boolean = false;
+  constructor(private occasionService: OccasionService)
+  {}
 
-  showAnswer() {
-    this.showSpinner = true;
-
-    setTimeout(() => {
-      this.answerDisplay = this.answer;
-      this.showSpinner = false;
-    }, 500);
+  ngOnInit()
+  {
+    this.getOccasions()
   }
+  
+  getOccasions()
+  {
+    this.occasionService.getAll().subscribe(
+            data => { 
+              this.occasions = data
+              console.log(this.occasions)
 
-
+            },
+            err => console.error(err),
+            () => console.log('done loading foods')
+          );
+  }
 }
