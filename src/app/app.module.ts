@@ -6,6 +6,8 @@ import { MaterialModule } from './material.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './signin/signin.component';
+import { AppRoutingModule } from './app-routing.module';
+
 import {
   SocialLoginModule,
   AuthServiceConfig,
@@ -15,6 +17,7 @@ import {
 
 import { OccasionService } from './services/occasion.service';
 import { HttpClientModule } from '@angular/common/http';
+import { AddOccasionComponent } from './AddOccasion/AddOccasion.component';
 
 // Configs 
 export function getAuthServiceConfigs() {
@@ -37,7 +40,8 @@ export function getAuthServiceConfigs() {
 @NgModule({
   declarations: [
     AppComponent,
-    SigninComponent
+    SigninComponent,
+    AddOccasionComponent
 ],
   imports: [
     BrowserModule,
@@ -46,7 +50,8 @@ export function getAuthServiceConfigs() {
     HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
-    SocialLoginModule
+    SocialLoginModule,
+    AppRoutingModule
   ],
   providers: [
     OccasionService,
