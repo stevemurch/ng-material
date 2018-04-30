@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Occasion } from '../models/occasion';
+import { OccasionService } from '../services/occasion.service';
 
 @Component({
   selector: 'app-addoccasion',
@@ -10,12 +11,14 @@ export class AddOccasionComponent implements OnInit {
 
   occasion = new Occasion();
 
-  constructor() { }
+  constructor(private occasionService: OccasionService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
+  
 
   onSubmit() {
     alert("Adding "+this.occasion.title)
+    this.occasionService.addOccasion(this.occasion);
   }
 }

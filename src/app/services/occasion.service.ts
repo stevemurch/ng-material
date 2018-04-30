@@ -8,11 +8,24 @@ const httpOptions = {
  
 @Injectable()
 export class OccasionService {
- 
+    
     constructor(private http:HttpClient) {}
  
+    
+
     // Uses http.get() to load data from a single API endpoint
     getAll() {
         return this.http.get('http://localhost:50742/api/occasion');
     }
+
+    addOccasion(occasion){
+        return this.http.post('http://localhost:50742/api/occasion', occasion).subscribe(
+
+
+        );
+
+        //.map(res => res.json())
+
+      }
+
 }
