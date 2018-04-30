@@ -1,3 +1,27 @@
-<p>
-  addoccasion works!
-</p>
+<h2>Occasion</h2>
+<form (ngSubmit)="onSubmit()">
+<div class="add-occasion-container">
+    <mat-form-field>
+      <input [(ngModel)]="occasion.title" name="title" matInput placeholder="Title">
+    </mat-form-field>
+  
+    <mat-form-field>
+      <textarea [(ngModel)]="occasion.notes" name="notes" matInput placeholder="Notes"></textarea>
+      <mat-hint>Hello World</mat-hint>
+    </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select [(ngModel)]="occasion.type" name="type" placeholder="Select">
+        <mat-option value="1">Breakfast</mat-option>
+        <mat-option value="2">Brunch</mat-option>
+        <mat-option value="3">Lunch</mat-option>
+        <mat-option value="4">Dinner</mat-option>
+        <mat-option value="5">Cocktails</mat-option>
+        <mat-option value="6">Party</mat-option>
+        <mat-option value="7">Boat</mat-option>
+        <mat-option value="8">Picnic</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button mat-button type="submit">Submit</button>
+</form>

@@ -1,0 +1,24 @@
+<p>
+  home works!
+</p>
+
+<div *ngFor="let occasion of occasions">
+    <mat-card>
+        <mat-card-title>{{ occasion.title }}</mat-card-title>
+        <mat-card-subtitle>
+            {{ occasion.date | date:'short'}}
+        </mat-card-subtitle>
+        <mat-card-content>
+          <ul>
+            <li *ngFor="let person of occasion.persons">
+              {{ person.firstName}} {{ person.lastName }}
+            </li>
+          </ul>
+          <div>
+            {{ occasion.notes }}
+          </div>
+        </mat-card-content>      
+  
+        
+    </mat-card>
+  </div>

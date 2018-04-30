@@ -1,0 +1,8 @@
+.add-occasion-container {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .add-occasion-container > * {
+    width: 100%;
+  }

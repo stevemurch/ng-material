@@ -8,26 +8,13 @@ import { OccasionService } from './services/occasion.service';
 })
 export class AppComponent {
   title = 'app';
-  public occasions;
+ 
 
   constructor(private occasionService: OccasionService)
   {}
 
   ngOnInit()
   {
-    this.getOccasions()
-  }
-  
-  getOccasions()
-  {
-    this.occasionService.getAll().subscribe(
-            data => { 
-              this.occasions = data
-              console.log(this.occasions)
 
-            },
-            err => console.error(err),
-            () => console.log('done loading foods')
-          );
   }
 }

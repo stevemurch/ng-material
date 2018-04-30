@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Occasion } from '../models/occasion';
 
 @Component({
   selector: 'app-addoccasion',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddOccasionComponent implements OnInit {
 
+  occasion = new Occasion();
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onSubmit() {
+    alert("Adding "+this.occasion.title)
+  }
 }

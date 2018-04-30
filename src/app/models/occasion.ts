@@ -1,7 +1,11 @@
-class Occasion {
-    title: string;
-    date: Date;
-    persons: any[];
-    notes: string;
-    type: number;
+export class Occasion {
+    constructor(
+        public title?: string,
+        public date?: Date,
+        public persons?: any[],
+        public notes?: string,
+        public type?: number
+    ) {
+
+    }
 }
