@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OccasionService } from '../services/occasion.service';
+import { EventEmitter } from 'events';
 
 @Component({
   selector: 'app-home',
@@ -14,20 +15,30 @@ export class HomeComponent implements OnInit {
 
   ngOnInit()
   {
-    this.getOccasions()
+    this.occasionService.onDBEvent.subscribe(
+      message=>{
+        switch(message)
+        {
+          case "reload":
+            this.occasionService.loadOccasionsData()
+          break;
+          case "display":
+            this.occasions = this.occasionService.occasions
+            this.displayOccasions(this.occasions)
+          break;
+        }
+      }
+    )
+
+    this.occasionService.onDBEvent.next("reload")
+    
+  }
+
+  displayOccasions(data)
+  {
+    this.occasions = data
   }
   
-  getOccasions()
-  {
-    this.occasionService.getAll().subscribe(
-            data => { 
-              this.occasions = data
-              console.log(this.occasions)
-
-            },
-            err => console.error(err),
-            () => console.log('done loading foods')
-          );
-  }
+  
 
 }

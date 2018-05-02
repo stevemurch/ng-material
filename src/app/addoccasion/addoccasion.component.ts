@@ -19,8 +19,12 @@ export class AddOccasionComponent implements OnInit {
   
 
   onSubmit() {
-    this.occasionService.addOccasion(this.occasion);
-    this.router.navigateByUrl('/');
+    this.occasionService.addOccasion(this.occasion).subscribe(
+      complete=>{
+        this.router.navigateByUrl('/');
+        this.occasionService.onDBEvent.next("reload")
+      }
+    );
 
   }
 }

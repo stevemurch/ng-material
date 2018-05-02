@@ -6,8 +6,13 @@
     </mat-form-field>
   
     <mat-form-field>
+      <input [(ngModel)]="occasion.date" name="date" matInput placeholder="Date"/>
+      <mat-hint>Date</mat-hint>
+    </mat-form-field>
+
+    <mat-form-field>
       <textarea [(ngModel)]="occasion.notes" name="notes" matInput placeholder="Notes"></textarea>
-      <mat-hint>Hello World</mat-hint>
+      <mat-hint>Notes</mat-hint>
     </mat-form-field>
   
     <mat-form-field>

@@ -7,7 +7,7 @@ import { OccasionService } from './services/occasion.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+  title = 'Entertainment Log';
  
 
   constructor(private occasionService: OccasionService)
