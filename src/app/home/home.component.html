@@ -1,10 +1,15 @@
-<p>
-  home works!
-</p>
-
 <div *ngFor="let occasion of occasions">
     <mat-card>
-        <mat-card-title>{{ occasion.title }}</mat-card-title>
+        <mat-card-title>
+          <span class="flex-item">
+              {{ occasion.title }}
+          </span>
+            <span class="flex-item">
+            <button mat-icon-button>
+                <mat-icon (click)="deleteOccasion(occasion)" aria-label="Delete">delete</mat-icon>
+              </button>
+          </span>
+        </mat-card-title>
         <mat-card-subtitle>
             {{ occasion.date | date:'short'}}
         </mat-card-subtitle>
@@ -18,7 +23,5 @@
             {{ occasion.notes }}
           </div>
         </mat-card-content>      
-  
-        
     </mat-card>
   </div>

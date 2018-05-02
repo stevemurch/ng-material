@@ -34,6 +34,19 @@ export class HomeComponent implements OnInit {
     
   }
 
+  deleteOccasion(occasion)
+  {
+    console.log("delete occasion ");
+    console.log(occasion)
+
+    this.occasionService.deleteOccasion(occasion).subscribe(
+      result=>{
+        this.occasionService.onDBEvent.next("reload")
+      }
+    )
+
+  }
+
   displayOccasions(data)
   {
     this.occasions = data

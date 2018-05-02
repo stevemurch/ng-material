@@ -22,6 +22,11 @@ export class OccasionService {
         return this.http.get('http://localhost:50742/api/occasion');
     }
 
+    deleteOccasion(occasion) {
+      var result = this.http.delete('http://localhost:50742/api/occasion/'+occasion.id);
+      return result
+    }
+
     addOccasion(occasion):Observable<Object>{
         
         var occResult = this.http.post('http://localhost:50742/api/occasion', 
