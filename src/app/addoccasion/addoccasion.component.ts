@@ -12,7 +12,7 @@ export class AddOccasionComponent implements OnInit {
 
   constructor(private router: Router, private occasionService: OccasionService) { }
 
-  occasion = new Occasion();
+  occasion = new Occasion(new Date());
 
   ngOnInit(): void {
   }

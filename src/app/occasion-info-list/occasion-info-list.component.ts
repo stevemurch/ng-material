@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { OccasionService } from '../services/occasion.service';
 
 @Component({
   selector: 'app-occasion-info-list',
@@ -9,9 +10,22 @@ export class OccasionInfoListComponent implements OnInit {
 
   @Input() public occasions
 
-  constructor() { }
+  constructor(private occasionService: OccasionService) { }
 
   ngOnInit() {
+  }
+
+  deleteOccasion(occasion)
+  {
+    console.log("delete occasion ");
+    console.log(occasion)
+
+    this.occasionService.deleteOccasion(occasion).subscribe(
+      result=>{
+        this.occasionService.onDBEvent.next("reload")
+      }
+    )
+
   }
 
 }

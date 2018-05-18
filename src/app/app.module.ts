@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { SigninComponent } from './signin/signin.component';
 import { AppRoutingModule, appRoutes } from './app-routing.module';
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
 
 import {
   SocialLoginModule,
@@ -58,7 +59,9 @@ export function getAuthServiceConfigs() {
     MaterialModule,
     SocialLoginModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot()
     
   ],
   providers: [
