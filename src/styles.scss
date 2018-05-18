@@ -15,3 +15,26 @@ body {
     color:$mycolor;
     font-weight:bold;
 }
+
+
+
+.flex-container {
+    display:flex;
+    flex-direction: row;
+}
+.par-1 {
+    flex:1;
+}
+.par-2 {
+    flex:1;
+}
+.par-3 {
+    flex:1;
+}
+
+@media only screen and (max-width:600px)
+{
+    .par-3, .par-2 {
+        display:none;
+    }
+}
