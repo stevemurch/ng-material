@@ -21,6 +21,7 @@ import { AddOccasionComponent } from './AddOccasion/AddOccasion.component';
 import { PeopleComponent } from './people/people.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule } from '@angular/router';
+import { OccasionInfoListComponent } from './occasion-info-list/occasion-info-list.component';
 
 // Configs 
 export function getAuthServiceConfigs() {
@@ -43,10 +44,10 @@ export function getAuthServiceConfigs() {
   declarations: [
     AppComponent,
     SigninComponent,
-    AddOccasionComponent
-,
+    AddOccasionComponent,
     PeopleComponent,
-    HomeComponent
+    HomeComponent,
+    OccasionInfoListComponent
 ],
   imports: [
     BrowserModule,

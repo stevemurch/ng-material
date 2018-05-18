@@ -1,0 +1,27 @@
+<div *ngFor="let occasion of occasions">
+  <mat-card>
+      <mat-card-title>
+        <span class="flex-item">
+            {{ occasion.title }}
+        </span>
+      </mat-card-title>
+      <mat-card-subtitle>
+          {{ occasion.date | date:'short'}}
+      </mat-card-subtitle>
+      <mat-card-content>
+        <ul>
+          <li *ngFor="let person of occasion.persons">
+            {{ person.firstName}} {{ person.lastName }}
+          </li>
+        </ul>
+        <div>
+          {{ occasion.notes }}
+        </div>
+      </mat-card-content> 
+      <mat-card-footer>
+          <button mat-icon-button>
+              <mat-icon (click)="deleteOccasion(occasion)" aria-label="Delete">delete</mat-icon>
+            </button>
+      </mat-card-footer>     
+  </mat-card>
+</div>
