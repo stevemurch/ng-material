@@ -28,7 +28,7 @@
     </mat-form-field>
   </div>
 
-  <div [froalaEditor]>Hello, Froala!</div>
+  <div [froalaEditor] [(froalaModel)]="editorContent"></div>
 
   <button mat-button type="submit">Submit</button>
 </form>

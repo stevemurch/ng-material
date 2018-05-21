@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
 })
 export class AddOccasionComponent implements OnInit {
 
+  public editorContent: string = 'My Document\'s Title'
+
   constructor(private router: Router, private occasionService: OccasionService) { }
 
   occasion = new Occasion(new Date());
@@ -19,6 +21,8 @@ export class AddOccasionComponent implements OnInit {
   
 
   onSubmit() {
+    alert(this.editorContent);
+
     this.occasionService.addOccasion(this.occasion).subscribe(
       complete=>{
         this.router.navigateByUrl('/');
